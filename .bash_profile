@@ -1,5 +1,5 @@
 #export PS1=" 💾  \033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[31m\][\w]\[\033[m\]💰 "
-export PS1="\033[36m\]\u@mia\033[m\]:\[\033[31m\][\W]\[\033[m\]"
+export PS1="\033[36m\]\u\[\033[37m\]@\[\033[34m\]\h:\[\033[31m\][\W]\[\033[m\]"
 
 #export CLICOLOR=1
 #export LSCOLORS=ExFxBxDxCxegedabagacad
@@ -16,6 +16,7 @@ export LESS_TERMCAP_us=$(printf '\e[04;36m')
 alias ls='ls -GFh'
 alias ll='ls -alh'
 alias py3='python3'
+alias archeypic='archey -c && sleep 1 && screencapture ~/Desktop/picture.png'
 
 HISTSIZE=50000
 
@@ -42,4 +43,3 @@ PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
 
 PATH="/usr/local/mysql/bin:${PATH}"  
 export PATH
-alias archeypic='archey -c && sleep 1 && screencapture ~/Desktop/picture.png'
