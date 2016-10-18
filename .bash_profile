@@ -1,5 +1,5 @@
 #export PS1=" 💾  \033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[31m\][\w]\[\033[m\]💰 "
-export PS1="\n\033[36m\]\u@mia\033[m\]:\[\033[31m\][\W]\[\033[m\]"
+export PS1="\033[36m\]\u@mia\033[m\]:\[\033[31m\][\W]\[\033[m\]"
 
 #export CLICOLOR=1
 #export LSCOLORS=ExFxBxDxCxegedabagacad
@@ -15,7 +15,6 @@ export LESS_TERMCAP_us=$(printf '\e[04;36m')
 
 alias ls='ls -GFh'
 alias ll='ls -alh'
-alias kas='echo JOHN LOVES KARIN | cowsay -f kitty'
 alias py3='python3'
 
 HISTSIZE=50000
@@ -31,6 +30,7 @@ function weather
     getweather dc | toilet -t --gay -f mono9 | less -R;
 }
 
+# pulls images off 4chan used to scrape wallpapers from them
 function get4chan 
 {
     wget -H -A .webm,.jpg,.png,.gif,.swf -rc -nd -Di.4cdn.org -P pics -erobots=off --no-clobber "boards.4chan.org/$1/";
