@@ -30,10 +30,10 @@ function weather
     getweather dc | toilet -t --gay -f mono9 | less -R;
 }
 
-# pulls images off 4chan used to scrape wallpapers from them
-function get4chan 
+# scrapes images 
+function getpapes
 {
-    wget -H -A .webm,.jpg,.png,.gif,.swf -rc -nd -Di.4cdn.org -P pics -erobots=off --no-clobber "boards.4chan.org/$1/";
+    wget -H -A .webm,.jpg,.png,.gif,.swf -rc -nd -Di.4cdn.org -P pics -erobots=off --no-clobber "$1";
 }
 
 # Setting PATH for Python 3.4
