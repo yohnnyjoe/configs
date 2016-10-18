@@ -1,4 +1,10 @@
-" An example for a vimrc file.
+" 
+" I used this vimrc as a starting point, I've adjusted a few things here 
+" and there, such as added syntax highlighting for Java.  I forget where I got 
+" this from.  It's on git for peace of mind and consistency if needed, but feel
+" free to use it.
+"
+" -John
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
 " Last change:	2014 Feb 05
