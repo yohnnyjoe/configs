@@ -1,10 +1,15 @@
-#export PS1=" 💾  \033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[31m\][\w]\[\033[m\]💰 "
-export PS1="\033[36m\]\u\[\033[37m\]@\[\033[34m\]\h:\[\033[31m\][\W]\[\033[m\]"
+# first PS1 edit, kept for historical sake
+# export PS1=" 💾  \033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[31m\][\w]\[\033[m\]💰 "
 
+# user@home:$PWD, newline, hex for right hook arrow, return color to base
+export PS1=$'\033[36m\]\u\[\033[37m\]@\[\033[34m\]\h:\[\033[31m\][\w]\n\xe2\x86\xaa\[\033[m\] '
+
+# don't use these anymore, gave basic terminal colors
+# LSCOLORS is for diff colors for dirs and files and sym links and such
 #export CLICOLOR=1
 #export LSCOLORS=ExFxBxDxCxegedabagacad
 
-#Following add color to less, in order for man pages to have color
+# Following adds color to man pages, highlights variables / keywords 
 export LESS_TERMCAP_mb=$(printf '\e[01;31m')
 export LESS_TERMCAP_md=$(printf '\e[01;35m')
 export LESS_TERMCAP_me=$(printf '\e[0m')
@@ -13,19 +18,24 @@ export LESS_TERMCAP_so=$(printf '\e[01;33m')
 export LESS_TERMCAP_ue=$(printf '\e[0m')
 export LESS_TERMCAP_us=$(printf '\e[04;36m')
 
+
+# aliases
 alias ls='ls -GFh'
 alias ll='ls -alh'
 alias py3='python3'
 alias archeypic='archey -c && sleep 1 && screencapture ~/Desktop/picture.png'
 
+# increased size of history file
 HISTSIZE=50000
 
-#getweather (city/zip)
+# getweather (city/zip) pulls weather from wunderground.
+# usage: getweather dc or getweather 20009 (loc or zip).
 function getweather
 {
     curl -s "http://api.wunderground.com/auto/wui/geo/ForecastXML/index.xml?query=${@:-<YOURZIPORLOC>}"|perl -ne '/<title>([^<]+)/&&printf "%s: ",$1;/<fcttext>([^<]+)/&&printf $1, "\n"';
 }
 
+# calls getweather with dc as argument feeds to toilet for silly ascii art.
 function weather
 {
     getweather dc | toilet -t --gay -f mono9 | less -R;
@@ -41,5 +51,7 @@ function getpapes
 # The orginal version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
 
+# MySQL path, fogot why I had to set this but I had to.
 PATH="/usr/local/mysql/bin:${PATH}"  
+
 export PATH
