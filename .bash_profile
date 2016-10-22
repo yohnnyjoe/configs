@@ -24,6 +24,8 @@ alias ls='ls -GFh'
 alias ll='ls -alh'
 alias py3='python3'
 alias archeypic='archey -c && sleep 1 && screencapture ~/Desktop/picture.png'
+alias sqlstart='sudo /usr/local/mysql/support-files/mysql.server start'
+alias sqlstop='sudo /usr/local/mysql/support-files/mysql.server stop'
 
 # increased size of history file
 HISTSIZE=50000
