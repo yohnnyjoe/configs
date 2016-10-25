@@ -55,8 +55,7 @@ inoremap <C-U> <C-G>u<C-U>
 " remapping esc to jk
 inoremap jk <ESC>
 
-colorscheme solarized
-"colorscheme badwolf
+colorscheme molokai
 let g:solarized_termcolors=256
 
 " Tabs & Spaces, sets visual spaces, editing spaces to 4
