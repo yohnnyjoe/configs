@@ -60,10 +60,10 @@ let g:solarized_termcolors=256
 
 " Tabs & Spaces, sets visual spaces, editing spaces to 4
 " last line makes tabs spaces, useful for python 
-set tabstop=4 		"visual
-set softtabstop=4 	"editing
+set tabstop=2 		"visual
+set softtabstop=2 	"editing
 set expandtab 		"tabs are spaces
-set shiftwidth=4        "makes autoindent 4
+set shiftwidth=2        "makes autoindent 4
 
 "UI Config - options to change random visuals
 set number 		"shows line numbers
@@ -90,8 +90,8 @@ nnoremap gV `[v`]
 " change leader to comm
 let mapleader=","
 
-" set textwidth to 80
-set textwidth=80
+" set textwidth to 100
+" set textwidth=100
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
@@ -125,7 +125,7 @@ if has("autocmd")
 
   " For all text files set 'textwidth' to 78 characters.
   " Hopefully this doesn't mess shit up
-  autocmd FileType * setlocal textwidth=78 formatoptions+=t
+  autocmd FileType * setlocal textwidth=100 formatoptions+=t
   " Disable auto commenting for next line
   " autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
   au FileType java setlocal comments-=:// comments+=f://

@@ -2,7 +2,7 @@
 # export PS1=" 💾  \033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[31m\][\w]\[\033[m\]💰 "
 
 # user@home:$PWD, newline, hex for right hook arrow, return color to base
-export PS1=$'\033[36m\]\u\[\033[37m\]@\[\033[34m\]\h:\[\033[31m\][\w]\n\xe2\x86\xaa\[\033[m\] '
+export PS1=$'\033[36m\]\u\[\033[37m\]@\[\033[34m\]\h:\[\033[31m\][\w]\n\[\033[31m\]\xe2\x86\xaa\[\033[m\] '
 
 # don't use these anymore, gave basic terminal colors
 # LSCOLORS is for diff colors for dirs and files and sym links and such
