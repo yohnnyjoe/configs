@@ -154,3 +154,11 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
+
+
+" execute pathogen#infect()
+
+" NERDTree configuration
+"let NERDTreeWinSize=35
+"map  to toggle NERDTree window
+"nmap   :NERDTreeToggle
