@@ -156,7 +156,12 @@ if !exists(":DiffOrig")
 endif
 
 
-" execute pathogen#infect()
+" Allow Pathogen plugins
+execute pathogen#infect()
+
+" set md to markdown, not modula2
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+
 
 " NERDTree configuration
 "let NERDTreeWinSize=35
