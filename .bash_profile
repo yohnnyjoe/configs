@@ -51,9 +51,14 @@ function getpapes
 
 # Setting PATH for Python 3.4
 # The orginal version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
+export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.4/bin
+
+#PATH="$PATH:/Users/johnwachter/Library/Python/3.4/bin"
 
 # MySQL path, fogot why I had to set this but I had to.
-PATH="/usr/local/mysql/bin:${PATH}"  
+export PATH=$PATH:/usr/local/mysql/bin
 
-export PATH
+# For calibre shit
+#export PATH=$PATH:/Applications/calibre.app/Contents/console.app/Contents/MacOS/
+
+#export PATH
