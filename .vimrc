@@ -55,8 +55,27 @@ inoremap <C-U> <C-G>u<C-U>
 " remapping esc to jk
 inoremap jk <ESC>
 
-colorscheme molokai
-let g:solarized_termcolors=256
+set t_Co=256
+" set termguicolors
+set background=dark
+colorscheme gruvbox
+
+"" IMPORTANT: Uncomment one of the following lines to force
+"" using 256 colors (or 88 colors) if your terminal supports it,
+" " but does not automatically use 256 colors by default.
+"set t_Co=256
+" "set t_Co=88
+"if (&t_Co == 256 || &t_Co == 88) && !has('gui_running') &&
+"  \ filereadable(expand("$HOME/.vim/plugin/guicolorscheme.vim"))
+"  " Use the guicolorscheme plugin to makes 256-color or 88-color
+"  " terminal use GUI colors rather than cterm colors.
+"  runtime! plugin/guicolorscheme.vim
+"  GuiColorScheme rastafari
+"  else
+"  " For 8-color 16-color terminals or for gvim, just use the
+"  " regular :colorscheme command.
+"  colorscheme rastafari
+"endif
 
 " Tabs & Spaces, sets visual spaces, editing spaces to 4
 " last line makes tabs spaces, useful for python 
@@ -105,7 +124,6 @@ syntax on
 set hlsearch
 "turn off search highlight with ,<space>
 nnoremap <leader><space> :nohlsearch<CR> 
-set background=dark 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
 
@@ -120,7 +138,7 @@ if has("autocmd")
   augroup vimrcEx
   au!
   "trying to get good syntax for java
-  au BufReadPost,BufNewFile *.java colorscheme monokai
+  au BufReadPost,BufNewFile *.java colorscheme monokai 
   au BufReadPost,BufNewFile *.py colorscheme molokaiyo
 
   " For all text files set 'textwidth' to 78 characters.

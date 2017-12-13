@@ -6,8 +6,10 @@ export PS1=$'\033[36m\]\u\[\033[32m\]@\[\033[36m\]\h:\[\033[31m\][\w]\n\[\033[31
 
 # don't use these anymore, gave basic terminal colors
 # LSCOLORS is for diff colors for dirs and files and sym links and such
-#export CLICOLOR=1
+export CLICOLOR=1
 #export LSCOLORS=ExFxBxDxCxegedabagacad
+
+export TERM=xterm-256color
 
 # Following adds color to man pages, highlights variables / keywords 
 export LESS_TERMCAP_mb=$(printf '\e[01;31m')
@@ -34,7 +36,7 @@ HISTSIZE=50000
 # usage: getweather dc or getweather 20009 (loc or zip).
 function getweather
 {
-    curl -s "http://api.wunderground.com/auto/wui/geo/ForecastXML/index.xml?query=${@:-<YOURZIPORLOC>}"|perl -ne '/<title>([^<]+)/&&printf "%s: ",$1;/<fcttext>([^<]+)/&&printf $1, "\n"';
+    curl -s "http://api.wunderground.com/auto/wui/geo/ForecastXML/index.xml?query=${@:-<YOURZIPORLOC>}"|perl -ne '/<title>([^<]+)/&&printf "%s: ",$1;/<fcttext>([^<]+)/&&printf $1, ';
 }
 
 # calls getweather with dc as argument feeds to toilet for silly ascii art.
@@ -53,7 +55,7 @@ function getpapes
 # The orginal version is saved in .bash_profile.pysave
 export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.4/bin
 
-#PATH="$PATH:/Users/johnwachter/Library/Python/3.4/bin"
+export PATH="$PATH:/Users/johnwachter/Library/Python/3.4/bin"
 
 # MySQL path, fogot why I had to set this but I had to.
 export PATH=$PATH:/usr/local/mysql/bin
